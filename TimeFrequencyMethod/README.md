@@ -2,7 +2,7 @@ The sun rises and sets.
 Lives begin and end.
 Markets boom and bust.
 
-The tool to understand the cycles:
+Tools to understand the cycles:
 
 # Fourier transform
 One can't know the time and frequency domains simultaneously. -Heisenberg uncertainty principle
