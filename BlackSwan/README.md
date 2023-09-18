@@ -6,9 +6,9 @@ It is really unpredictable? what does it mean by unpredictable? what kind of dis
 
 Bouchaud, Jean-Philippe, et al. "Taming large events: Optimal portfolio theory for strongly fluctuating assets." International Journal of Theoretical and Applied Finance 1.01 (1998): 25-41.
 
-It's an empirical study of the beginning section of the paper.
+It's an empirical study of this paper.
 
-And the conclusion is that the expectation of the return for BTC_1h is not divergent, but the variance is. And it follows the power law as described by the paper.
+The conclusion is that the mean of the return for BTC_1h is not divergent, but the variance is. And it follows the power law as described.
 
 The difficult part is that for the power law, if the lower moment (mean/variance) is divergent, then in order to get a number, probability or whatever, one would ineivitably need a strong biased prior. 
 
