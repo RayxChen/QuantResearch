@@ -1,3 +1,3 @@
 # QuantResearch
 
-Subjective zero-knowledge protocol :)
+zero-knowledge proof
