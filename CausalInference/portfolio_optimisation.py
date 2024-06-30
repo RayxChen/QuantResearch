@@ -60,7 +60,7 @@ def portfolio_returns_std(weights, expected_returns, cov_matrix):
     
     return annual_returns, annual_std_dev
 
-def optimize_portfolio(expected_returns, cov_matrix, weighted_scores, delta, gamma, target_risk, risk_free_rate):
+def optimize_portfolio(expected_returns, cov_matrix, weighted_scores, delta, gamma, target_risk, risk_free_rate, long_only=False):
     """
     Optimize the portfolio considering the Sharpe ratio and weighted scores for a fixed level of risk.
 
@@ -91,9 +91,13 @@ def optimize_portfolio(expected_returns, cov_matrix, weighted_scores, delta, gam
         {'type': 'eq', 'fun': lambda x: np.sum(x) - 1},
         {'type': 'eq', 'fun': lambda x: np.sqrt(x.T @ cov_matrix @ x) * np.sqrt(252) - target_risk}
     )
-
-    # Bounds: weights can be between -1 and 1 to allow short selling
-    bounds = tuple((-1, 1) for asset in range(len(expected_returns)))
+    
+    if long_only:
+        # Bounds: weights can only be between 0 and 1 for long-only positions
+        bounds = tuple((0, 1) for asset in range(len(expected_returns)))
+    else:
+        # Bounds: weights can be between -1 and 1 to allow short selling
+        bounds = tuple((-1, 1) for asset in range(len(expected_returns)))
 
     # Initial guess (equal distribution)
     init_guess = [1. / len(expected_returns) for _ in range(len(expected_returns))]
