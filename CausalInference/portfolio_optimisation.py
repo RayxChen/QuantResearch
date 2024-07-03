@@ -15,22 +15,14 @@ def calc_returns_cov(df, tickers):
     expected_returns (pd.Series): The mean daily returns for each ticker.
     cov_matrix (pd.DataFrame): The covariance matrix of daily returns for the tickers.
     """
-    # Filter the DataFrame for the selected tickers
+    
     filtered_df = df[df['ticker'].isin(tickers)].copy()
-    
-    # Ensure 'date' is in datetime format
     filtered_df['date'] = pd.to_datetime(filtered_df['date'])
-    
-    # Pivot the DataFrame to have dates as index and tickers as columns for 'adjClose' prices
     pivot_df = filtered_df.pivot(index='date', columns='ticker', values='adjClose')
-    
-    # Calculate daily returns
     returns = pivot_df.pct_change().dropna()
-    
-    # Calculate expected daily returns
     expected_returns = returns.mean()
     
-    # Calculate the covariance matrix of daily returns
+    # Calculate the covariance matrix of daily returns, need to be refined with better factor models
     cov_matrix = returns.cov()
     
     return expected_returns, cov_matrix
@@ -48,13 +40,9 @@ def portfolio_returns_std(weights, expected_returns, cov_matrix):
     float: Annualized portfolio return.
     float: Annualized portfolio standard deviation.
     """
-    # Daily returns
-    daily_returns = np.dot(weights, expected_returns)
-    
-    # Annualize returns (assuming 252 trading days)
+
+    daily_returns = np.dot(weights, expected_returns)    
     annual_returns = daily_returns * 252
-    
-    # Portfolio standard deviation (annualized)
     portfolio_var = weights.T @ cov_matrix @ weights
     annual_std_dev = np.sqrt(portfolio_var) * np.sqrt(252)
     
@@ -82,7 +70,7 @@ def optimize_portfolio(expected_returns, cov_matrix, weighted_scores, delta, gam
     def objective_function(weights, expected_returns, cov_matrix, weighted_scores, risk_free_rate):
         annual_returns, annual_std_dev = portfolio_returns_std(weights, expected_returns, cov_matrix)
         sharpe_ratio = (annual_returns - risk_free_rate) / annual_std_dev
-        # Penalize negative scores to favor short positions and reward positive scores to favor long positions
+        # Penalise negative scores to favor short positions and reward positive scores to favor long positions
         weighted_score_component = np.dot(weights, weighted_scores)
         return -delta*sharpe_ratio - gamma * weighted_score_component
 
@@ -102,7 +90,7 @@ def optimize_portfolio(expected_returns, cov_matrix, weighted_scores, delta, gam
     # Initial guess (equal distribution)
     init_guess = [1. / len(expected_returns) for _ in range(len(expected_returns))]
 
-    # Optimize the portfolio
+    # Optimise the portfolio
     opt_results = minimize(
         objective_function, 
         init_guess, 
