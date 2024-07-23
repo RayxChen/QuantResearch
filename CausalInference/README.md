@@ -4,4 +4,7 @@ The company's financial statements have a causal impact on quarterly returns, wi
 
 ### Brief
 
-causal_study.ipynb found the causal impact (though data was not enough the prediction have captured important metrics that gave the right decisions say top3 long of AAPL/MSFT/WMT, short of IBM/BA/TRV). And portfolio_study_result.ipynb incorporated such impact into the optimisation. (cov matrix estimation needs to be improved with factor model)
+causal_study.ipynb found the causal impact (though data was not enough the prediction have captured important metrics that gave the right decisions say top3 long of AAPL/MSFT/WMT, short of IBM/BA/TRV). And portfolio_study_result.ipynb incorporated such impact into the optimisation. (expected return can be hard to estimate -> Black Litterman, cov matrix estimation needs to be improved with factor model)
+
+### $\sigma$ = 0.3, risk taking
+![\sigma=0.3](./risk_taking.jpg)
