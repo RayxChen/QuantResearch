@@ -1,19 +1,19 @@
 ## Weekend/Weekday Effect on Sector Statistics
 
-This project includes an analysis of the weekday effect on sector statistics, with a focus on the Banks sector. We examine how the Banks sector performs on different days of the week, compared to classic behavior financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
+This project includes an analysis of the weekday effect on bank sector. We examine how the Banks sector performs on different days of the week, compared to classic behavior financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
 
 ![Sector Weekday Effect](./Banks/stats/sector_weekday_effect.jpg)
 
-## Causal Study of the stats
+## Causal Study of the Statistics
 
 The analysis further includes a causal study controlling the possible confounders @config.yaml, confirming the causality of the weekend effect (the bar effect in on next business day). 
 
 ![Weekday Effect](./Banks/causal_studies/weekday_effect/weekday_effect.jpg)
 
 
-## Bulge Brackets
+## Bulge Bracket
 
-Goldman Sachs (GS) exhibits distinct patterns on Mondays, potentially attributable to its Quantitative and Algorithmic Trading/Proprietary Trading. 
+Goldman Sachs (GS) exhibits distinct patterns on Mondays, potentially attributable to its quantitative and algorithmic trading/proprietary trading. 
 
 ![Goldman Sachs](./Banks/stats/weekday_effect/GS_weekday_effect.jpg)
 
