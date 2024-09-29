@@ -13,11 +13,9 @@ The analysis further includes a causal study controlling the possible confounder
 
 ## Bulge Brackets
 
-Goldman Sachs, JP Morgan especially GS have slightly different patterns on Monday possibly due to their investment banking business model. 
+Goldman Sachs (GS) exhibits distinct patterns on Mondays, potentially attributable to its Quantitative and Algorithmic Trading/Proprietary Trading. 
 
 ![Goldman Sachs](./Banks/stats/weekday_effect/GS_weekday_effect.jpg)
-
-![JPMorgan Chase](./Banks/stats/weekday_effect/JPM_weekday_effect.jpg)
 
 
 ## What About Month?
