@@ -1,6 +1,6 @@
 ## Weekend/Weekday Effect on Sector Statistics
 
-This project includes an analysis of the weekday effect on bank sector (top30 Market Cap + DB, 2000 onwards). We examine how the Banks sector performs on different days of the week, compared to classic behavior financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
+This project includes an analysis of the weekday effect on bank sector (top30 Market Cap + DB, from 2000 onwards). We examine how the Banks sector performs on different days of the week, compared to classic behavior financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
 
 ![Sector Weekday Effect](./Banks/stats/sector_weekday_effect.jpg)
 
