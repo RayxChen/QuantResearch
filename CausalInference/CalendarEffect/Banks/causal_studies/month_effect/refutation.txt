@@ -1,0 +1,17 @@
+
+Interpretation of Refutations:
+
+Data Subset Refuter:
+  - Mean refuted estimate: 0.000154 (std: 0.014470)
+  - Mean p-value: 0.895
+  - Interpretation: This refutation supports the robustness of the original results.
+
+Placebo Treatment Refuter:
+  - Mean refuted estimate: -0.000555 (std: 0.000000)
+  - Mean p-value: 0.840
+  - Interpretation: This refutation supports the robustness of the original results.
+
+Random Common Cause:
+  - Mean refuted estimate: 0.000156 (std: 0.014518)
+  - Mean p-value: 0.915
+  - Interpretation: This refutation supports the robustness of the original results.

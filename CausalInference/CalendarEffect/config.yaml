@@ -1,0 +1,139 @@
+sectors:
+  Banks:
+    stocks:
+      - JPM   # JPMorgan Chase & Co.
+      - BAC   # Bank of America Corporation
+      - WFC   # Wells Fargo & Company
+      - RY    # Royal Bank of Canada
+      - HDB   # HDFC Bank Limited
+      - MS    # Morgan Stanley
+      - HSBC  # HSBC Holdings plc
+      - GS    # The Goldman Sachs Group, Inc.
+      - MUFG  # Mitsubishi UFJ Financial Group, Inc.
+      - SCHW  # The Charles Schwab Corporation
+      - C     # Citigroup Inc.
+      - TD    # The Toronto-Dominion Bank
+      - IBN   # ICICI Bank Limited
+      - DB    # Deutsche Bank AG
+      - UBS   # UBS Group AG
+      - SMFG  # Sumitomo Mitsui Financial Group, Inc.
+      - BNPQY # BNP Paribas SA
+      - SAN   # Banco Santander, S.A.
+      - PNC   # The PNC Financial Services Group, Inc.
+      - USB   # U.S. Bancorp
+      - NU    # Nu Holdings Ltd.
+      - BNS   # The Bank of Nova Scotia
+      - BMO   # Bank of Montreal
+      - BBVA  # Banco Bilbao Vizcaya Argentaria, S.A.
+      - ITUB  # Itaú Unibanco Holding S.A.
+      - ING   # ING Groep N.V.
+      - TFC   # Truist Financial Corporation
+      - IBKR  # Interactive Brokers Group, Inc.
+      - BK    # The Bank of New York Mellon Corporation
+      - BCS   # Barclays PLC
+      - BSBR  # Banco Santander (Brasil) S.A.
+
+research_topics:
+  weekday_effect:
+    treatments:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+    common_causes:
+      - country_United States
+      - country_Canada
+      - country_India
+      - country_United Kingdom
+      - country_Japan
+      - country_Switzerland
+      - country_France
+      - country_Spain
+      - country_Brazil
+      - country_Netherlands
+      - country_Germany
+      - is_bulge_brackets
+      - curr_return
+      - volume
+      - MA5
+      - MA20
+      - MA50
+    outcome:
+      - next_return
+
+    output_directory: './Banks/causal_studies/weekday_effect'
+
+  month_effect:
+    treatments:
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    common_causes:
+      - is_UnitedStates
+      - is_bulge_brackets
+      - is_yield_curve_inverted
+      - vix_range
+      - vix_spike_days
+      - was_market_panic
+      - DGS2
+      - DGS10
+      - vwap
+      - MA3
+      - MA6
+      - MA12
+    outcome:
+      - month_return
+    
+    output_directory: 'output/month_effect'
+
+      
+  digit_effect:
+    treatments:
+      - open_digit_ones
+      - open_digit_tens
+      - close_digit_ones
+      - close_digit_tens
+    common_causes:
+      - market_cap
+      - trading_volume
+      - sector
+      - previous_day_return
+
+  market_sentiment:
+    treatments:
+      - news_sentiment
+      - social_media_buzz
+    common_causes:
+      - market_cap
+      - trading_volume
+      - previous_day_return
+
+  economic_indicators:
+    treatments:
+      - interest_rate
+      - inflation_rate
+      - gdp_growth
+    common_causes:
+      - market_cap
+      - sector
+      - pe_ratio
+
+  company_fundamentals:
+    treatments:
+      - revenue_growth
+      - profit_margin
+      - debt_to_equity
+    common_causes:
+      - market_cap
+      - sector
+      - company_age
