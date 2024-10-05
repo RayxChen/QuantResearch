@@ -1,3 +1,1 @@
 # QuantResearch
-
-zero-knowledge proof
