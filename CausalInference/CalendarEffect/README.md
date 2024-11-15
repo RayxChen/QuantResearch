@@ -1,6 +1,6 @@
 ## Weekend/Weekday Effect on Sector Statistics
 
-This project includes an analysis of the weekday effect on bank sector (top30 Market Cap + DB, from 2000/01/01 onwards). We examine how the Banks sector performs on different days of the week, compared to classic behavior financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
+This project includes an analysis of the weekday effect on bank sector (top30 Market Cap + DB, from 2000/01/01 onwards). We examine how the Banks sector performs on different days of the week, compared to classic behaviour financial theory. This analysis can reveal which days tend to be most profitable for bank stocks
 
 ![Sector Weekday Effect](./Banks/stats/sector_weekday_effect.jpg)
 
@@ -20,7 +20,7 @@ Goldman Sachs (GS) exhibits distinct patterns on Mondays, potentially attributab
 
 ## What About Month?
 
-While this time the possibly confounders are numerous, 
+While this time the possible confounders are numerous, 
 @config.yaml. We confirm the sector performs well in Apr, Jul, Oct, Nov, Dec but with different weights.
 
 ![Sector Month Effect](./Banks/stats/sector_month_effect.jpg)
